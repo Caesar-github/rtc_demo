@@ -27,9 +27,9 @@ int read_rtc_time()
         perror("RTC_RD_TIME ioctl");
         exit(errno);
     }
-    fprintf(stderr, "ReadRTCTime()%d-%d-%d,\%02d:%02d:%02d.\n",\
-    rtc_tm.tm_year + 1900,\rtc_tm.tm_mon + 1,rtc_tm.tm_mday,\
-    rtc_tm.tm_hour,rtc_tm.tm_min, rtc_tm.tm_sec);
+    fprintf(stderr, "ReadRTCTime()%d-%d-%d,\%02d:%02d:%02d.\n",
+        rtc_tm.tm_year + 1900,rtc_tm.tm_mon + 1,rtc_tm.tm_mday,
+        rtc_tm.tm_hour,rtc_tm.tm_min, rtc_tm.tm_sec);
 
     close(fd);
     return 0;
@@ -50,13 +50,13 @@ int read_rtc_time()
         perror(rtc);
         exit(errno);
     }
-    sscanf(dt, "%d-%d-%d %d:%d:%d",\
-    &rtc_tm.tm_year,&rtc_tm.tm_mon,&rtc_tm.tm_mday,\
-    &rtc_tm.tm_hour, &rtc_tm.tm_min, &rtc_tm.tm_sec);
+    sscanf(dt, "%d-%d-%d %d:%d:%d",
+        &rtc_tm.tm_year,&rtc_tm.tm_mon,&rtc_tm.tm_mday,
+        &rtc_tm.tm_hour, &rtc_tm.tm_min, &rtc_tm.tm_sec);
 
-    fprintf(stderr, "WriteRTCTime(char *dt) %d-%d-%d %d:%d:%d\n",\
-    rtc_tm.tm_year,rtc_tm.tm_mon, rtc_tm.tm_mday,rtc_tm.tm_hour,\
-    rtc_tm.tm_min, rtc_tm.tm_sec);
+    fprintf(stderr, "WriteRTCTime(char *dt) %d-%d-%d %d:%d:%d\n",
+        rtc_tm.tm_year,rtc_tm.tm_mon, rtc_tm.tm_mday,rtc_tm.tm_hour,
+        rtc_tm.tm_min, rtc_tm.tm_sec);
 
     rtc_tm.tm_mon--;
     rtc_tm.tm_year=rtc_tm.tm_year-1900;
@@ -86,9 +86,9 @@ int read_rtc_time()
         exit(errno);
     }
 
-    sscanf(dt, "%d-%d-%d %d:%d:%d",\
-    &rtc_tm.tm_year,&rtc_tm.tm_mon, &rtc_tm.tm_mday,\
-    &rtc_tm.tm_hour, &rtc_tm.tm_min, &rtc_tm.tm_sec);
+    sscanf(dt, "%d-%d-%d %d:%d:%d",
+        &rtc_tm.tm_year,&rtc_tm.tm_mon, &rtc_tm.tm_mday,
+        &rtc_tm.tm_hour, &rtc_tm.tm_min, &rtc_tm.tm_sec);
 
     rtc_tm.tm_mon--;
     rtc_tm.tm_year=rtc_tm.tm_year-1900;
@@ -110,9 +110,9 @@ int read_rtc_time()
         exit(errno);
     }
 
-    fprintf(stderr, "WriteRTCAlarmTime() %d-%d-%d %d:%d:%d\n",\
-    rtc_tm.tm_year+1900,rtc_tm.tm_mon+1, rtc_tm.tm_mday,\
-    rtc_tm.tm_hour, rtc_tm.tm_min, rtc_tm.tm_sec);
+    fprintf(stderr, "WriteRTCAlarmTime() %d-%d-%d %d:%d:%d\n",
+        rtc_tm.tm_year+1900,rtc_tm.tm_mon+1, rtc_tm.tm_mday,
+        rtc_tm.tm_hour, rtc_tm.tm_min, rtc_tm.tm_sec);
 
     fflush(stderr);
     /* Enable alarm interrupts */
@@ -145,9 +145,9 @@ int  read_rtc_alarm_time()
         exit(errno);
     }
 
-    fprintf(stderr, "ReadRTCAlarmTime() %d-%d-%d %d:%d:%d\n",\
-    rtc_tm.tm_year+1900,rtc_tm.tm_mon+1, rtc_tm.tm_mday,\
-    rtc_tm.tm_hour, rtc_tm.tm_min, rtc_tm.tm_sec);
+    fprintf(stderr, "ReadRTCAlarmTime() %d-%d-%d %d:%d:%d\n",
+        rtc_tm.tm_year+1900,rtc_tm.tm_mon+1, rtc_tm.tm_mday,
+        rtc_tm.tm_hour, rtc_tm.tm_min, rtc_tm.tm_sec);
 
     fflush(stderr);
     close(fd);
